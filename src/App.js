@@ -10,16 +10,21 @@ class App extends Component {
   }
 
 
-  //Your code here:
+  //Since App is the top level component, its componentDidMount method will be invoked before
+  // any other child components are even constructed.
 
+  // The App component is keeping track of timers using an array of random ID numbers. This
+  // allows for easy removal and addition of Timer components. In App, write a componentDidMount
+  // method that invokes the existing handleAddTimer class method.
 
+  // When writing lifecycle methods, avoid using arrow functions - while they may work in browser,
+  // we want these methods to exist on the prototype chain of whatever JavaScript class we've
+  // created. Lifecycle methods written using arrow functions will not exist on the prototype
+  // chain and will not pass the tests in this lab.
 
-
-
-
-
-
-
+  componentDidMount(){
+    this.handleAddTimer()
+  }
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
   render() {
