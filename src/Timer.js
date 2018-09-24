@@ -7,12 +7,20 @@ class Timer extends Component {
     color: '#'+Math.floor(Math.random()*16777215).toString(16)
   }
 
-  // add your code here
+  // Write a componentDidMount that initializes an interval. Pass clockTick as the callback function and set it to
+  // 1000 to update every second.
+  componentDidMount(){
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
+  // It is important to make sure that we clean up after ourselves when it comes to intervals. Not cleaning up can 
+  // cause memory leaks (meaning that system memory is allocated to something that is no longer necessary and won't
+  // free up), as intervals can keep firing after a component unmounts. To clear an interval, we use the built in
+  // clearInterval method, passing in the local variable:
 
-
-
-
+  componentWillUnmount(){
+    clearInterval(this.interval);
+  }
 
 
   render() {
