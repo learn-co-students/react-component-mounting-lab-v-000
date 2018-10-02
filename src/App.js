@@ -11,6 +11,9 @@ class App extends Component {
 
 
   //Your code here:
+  componentDidMount() {
+    this.handleAddTimer()
+}
 
 
 
@@ -18,9 +21,7 @@ class App extends Component {
 
 
 
-
-
-  // No need to modify anything in render or the class methods below
+  // No need to modify anything in render or tnpmhe class methods below
   // Unless, of course, you're curious about how it all works
   render() {
 
