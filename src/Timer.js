@@ -7,8 +7,16 @@ class Timer extends Component {
     color: '#'+Math.floor(Math.random()*16777215).toString(16)
   }
 
-  // add your code here
+  componentDidMount() {
+    // set it to a variable w/i scope of the class
+    // clockTick is the callback function
+    // 1000 updates it to every second
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
 
 
 
