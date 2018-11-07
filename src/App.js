@@ -11,6 +11,9 @@ class App extends Component {
 
 
   //Your code here:
+  componentDidMount(){
+    this.timerIDs = this.handleAddTimer()
+  }
 
 
 
