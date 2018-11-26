@@ -9,11 +9,13 @@ class Timer extends Component {
 
   // add your code here
 
+  componentDidMount = function() {
+      this.interval = setInterval(function() { this.clockTick() }, 1000);
+  }
 
-
-
-
-
+  componentsWillUnMount = function() {
+      this.stopClock();
+  }
 
   render() {
 
