@@ -11,14 +11,13 @@ class App extends Component {
 
 
   //Your code here:
+  componentDidMount = function() {
+      this.interval = setInterval(function() { this.clockTick() }, 1000);
+  }
 
-
-
-
-
-
-
-
+  componentsWillUnMount = function() {
+      this.stopClock();
+  }
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
