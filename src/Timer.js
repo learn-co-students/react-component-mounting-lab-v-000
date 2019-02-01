@@ -8,8 +8,15 @@ class Timer extends Component {
   }
 
   // add your code here
+  componentDidMount() {
+    //establish the initial timer
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
-
+  componentWillUnmount() {
+    //clear the interval timer and its contents 
+    clearInterval(this.interval)
+  }
 
 
 
