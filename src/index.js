@@ -4,5 +4,5 @@ import App from './App';
 
 import './App.css';
 
-
+// Yay React!
 ReactDOM.render(<App />, document.getElementById('root'));
