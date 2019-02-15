@@ -12,7 +12,15 @@ class App extends Component {
 
   //Your code here:
 
+//  handleAddTimer(){
+//    this.setState({
+//    timerID: [].push(Math.random())
+//  })
+//  }
 
+   componentDidMount() {
+     this.handleAddTimer()
+   }
 
 
 
