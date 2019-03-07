@@ -12,7 +12,10 @@ class App extends Component {
 
   //Your code here:
 
+  componentDidMount() {
+  const temp = this.handleAddTimer()
 
+}
 
 
 
