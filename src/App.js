@@ -11,7 +11,9 @@ class App extends Component {
 
 
   //Your code here:
-
+  componentDidMount() {
+    this.handleAddTimer()// this.interval = setInterval(this.fetchWeather, 1500);
+  }
 
 
 
