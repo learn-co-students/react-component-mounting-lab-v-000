@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Timer extends Component {
+export default class Timer extends Component {
 
   state = {
     time: 0,
@@ -9,11 +9,13 @@ class Timer extends Component {
 
   // add your code here
 
+  componentDidMount() {
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
-
-
-
-
+  componentWillUnmount() {
+    this.stopClock()
+  }
 
   render() {
 
@@ -36,7 +38,7 @@ class Timer extends Component {
       time: prevState.time+1
     }))
   }
-
+  // I like how this in encapsulated into its own function.
   stopClock = () => {
     clearInterval(this.interval)
   }
@@ -49,4 +51,3 @@ class Timer extends Component {
 
 }
 
-export default Timer;
