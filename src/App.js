@@ -9,9 +9,9 @@ class App extends Component {
     timerIDs: []
   }
 
-
-  //Your code here:
-
+  componentDidMount() {
+    // this.interval = setInterval(this.fetchWeather, 15000);
+  }
 
 
 
