@@ -4,27 +4,13 @@ import Timer from './Timer'
 
 class App extends Component {
 
-  //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
   }
 
   componentDidMount() {
     this.handleAddTimer()
-    // setInterval(this.handleAddTimer, 1000);
-    // nope, this actually adds a new timer every second :)
-    //In addition to being for learning in this lab, we're using componentDidMount before the render so that it is a separate process from the render, for optimization purposes?
   }
-
-
-
-
-
-
-
-
-  // No need to modify anything in render or the class methods below
-  // Unless, of course, you're curious about how it all works
 
   render() {
 
@@ -41,26 +27,21 @@ class App extends Component {
     );
   }
 
-  // returns array of components written in JSX, mapped from this.state.timerIDs
   renderTimers = () => this.state.timerIDs.map(id => {
     return <Timer key={id} id={id} removeTimer={this.removeTimer} />
   })
 
-  // adds a random number for timer ID
   handleAddTimer = () => {
     this.setState(prevState => ({
       timerIDs: [...prevState.timerIDs, Math.floor(Math.random()*1000)]
     }))
   }
 
-  // removeTimer updates state, removing any timer that matches the provided author
   removeTimer = id => {
     this.setState(prevState => ({
       timerIDs: prevState.timerIDs.filter(timer_id => timer_id !== id)
     }))
   }
-
-
 }
 
 export default App;
