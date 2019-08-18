@@ -9,9 +9,12 @@ class App extends Component {
     timerIDs: []
   }
 
-
-  //Your code here:
-
+  componentDidMount() {
+    this.handleAddTimer()
+    // setInterval(this.handleAddTimer, 1000);
+    // nope, this actually adds a new timer every second :)
+    //In addition to being for learning in this lab, we're using componentDidMount before the render so that it is a separate process from the render, for optimization purposes?
+  }
 
 
 
@@ -22,6 +25,7 @@ class App extends Component {
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
+
   render() {
 
     return (
