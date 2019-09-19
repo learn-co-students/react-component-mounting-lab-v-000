@@ -14,7 +14,11 @@ class App extends Component {
 
 
 
-
+componentDidMount() {
+  //not arrow function b/c prototype chain
+  //componentDidMount not declared w/ function keyword
+  this.handleAddTimer()
+}
 
 
 
