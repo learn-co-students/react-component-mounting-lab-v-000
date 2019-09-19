@@ -10,7 +10,21 @@ class Timer extends Component {
   // add your code here
 
 
+componentDidMount() {
+  //set up intervals here instead of state
+  this.interval = setInterval(this.clockTick, 1000)
+  //got error that clockTick not defined, b/c did clockTick() not this.clockTick()
+  //make sure not to invoke clockTick w/ parentheses
+  //instead pass reference to function w/o invoking
+  //anonymous arrow function are for when you need to pass arguments
+  //was invoking before and timer only hit once
+  //could also just put anonymous arrow function in to do functionality of whatever you need to do right there
+}
 
+componentWillUnmount() {
+  //clearInterval is built in function
+  clearInterval(this.interval)
+}
 
 
 
@@ -18,6 +32,7 @@ class Timer extends Component {
   render() {
 
     const { time, color, className } = this.state
+    //destructuring variables so can access through time vs this.state time
     return (
       <section className="Timer" style={{background: color}}>
 
