@@ -20,6 +20,7 @@ h1 {
 
 button {
   font-size: 200%;
+  margin: 5px;
 }
 
 .SpacePeople {
@@ -41,7 +42,7 @@ button {
   padding: 20px;
   min-width: 200px;
   width: 240px;
-  height: 150px;
+  height: auto;
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: 20px;
   box-shadow: 4px 6px rgba(200,200,200,0.8);
