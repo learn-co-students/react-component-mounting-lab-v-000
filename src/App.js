@@ -12,10 +12,10 @@ class App extends Component {
 
   //Your code here:
 
-
-
-
-
+  // don't use arrow functions for lifecycle methods
+  componentDidMount() {
+    this.handleAddTimer()
+  }
 
 
 
