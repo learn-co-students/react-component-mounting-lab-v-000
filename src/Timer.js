@@ -4,25 +4,29 @@ class Timer extends Component {
 
   state = {
     time: 0,
-    color: '#'+Math.floor(Math.random()*16777215).toString(16)
+    color: '#' + Math.floor(Math.random() * 16777215).toString(16),
+    started: true
   }
 
-  // add your code here
+  componentDidMount() {
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
-
-
-
-
-
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
 
   render() {
-
+    {console.log(this.state.color)}
     const { time, color, className } = this.state
     return (
       <section className="Timer" style={{background: color}}>
 
-        <h1>{ time }</h1>
-        <button onClick={ this.stopClock }>Stop</button>
+        <h1>{time}</h1>
+        {this.state.started === true ?
+          <button onClick={this.stopClock}>Stop</button> :
+          <button onClick={this.startClock}>Start</button>
+        }
         <aside className="mountText">Mounted</aside>
         <small onClick={ this.handleClose }>X</small>
 
@@ -37,7 +41,17 @@ class Timer extends Component {
     }))
   }
 
+  startClock = () => {
+    this.setState({
+      started: true
+    })
+    this.interval = setInterval(this.clockTick, 1000)
+  }
+
   stopClock = () => {
+    this.setState({
+      started: false
+    })
     clearInterval(this.interval)
   }
 
