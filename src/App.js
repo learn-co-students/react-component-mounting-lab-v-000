@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-
-import Timer from './Timer'
+import Timer from './Timer';
 
 class App extends Component {
 
-  //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
   }
 
+  componentDidMount() {
+    this.handleAddTimer();
+  }
 
-  //Your code here:
 
 
 
@@ -45,7 +45,7 @@ class App extends Component {
   // adds a random number for timer ID
   handleAddTimer = () => {
     this.setState(prevState => ({
-      timerIDs: [...prevState.timerIDs, Math.floor(Math.random()*1000)]
+      timerIDs: [...prevState.timerIDs, Math.floor(Math.random() * 1000)]
     }))
   }
 
