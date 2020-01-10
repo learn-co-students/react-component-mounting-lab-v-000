@@ -57,6 +57,7 @@ describe('<Timer />', () => {
     timerWrapper.unmount()
     expect(Timer.prototype.componentWillUnmount.calledOnce).to.equal(true);
 
+
   })
 
 });
