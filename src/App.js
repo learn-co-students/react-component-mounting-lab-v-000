@@ -8,12 +8,13 @@ class App extends Component {
   state = {
     timerIDs: []
   }
-
-
   //Your code here:
 
-
-
+  // Takes initial actions within an app. 
+  // Actions might include getting remote API data, setting cursor focus, or creating an interval or timeout.
+  componentDidMount() {
+    this.handleAddTimer()
+  }
 
 
 

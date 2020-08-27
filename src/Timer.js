@@ -7,6 +7,19 @@ class Timer extends Component {
   };
 
   // add your code here
+  // a good place to include setInterval or setTimeout functions, 
+  // allowing you to delay something from happening on a component or cause some repeating change. 
+  componentDidMount() {
+    // To create a setInterval, the best practice is to assign it to a variable within the scope of our class:
+    // // this.interval = setInterval(...)
+    this.interval = setInterval(this.clockTick, 1000)
+  }
+
+  componentWillUnmount() {
+    // To clear an interval, we use the built in clearInterval method, passing in the local variable:
+    // // clearInterval(this.interval);
+    clearInterval(this.interval);
+  }
 
   render() {
     const { time, color } = this.state;
