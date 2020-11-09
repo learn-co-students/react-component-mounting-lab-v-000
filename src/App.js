@@ -9,14 +9,13 @@ class App extends Component {
     timerIDs: []
   }
 
-
   //Your code here:
 
-
-
-
-
-
+componentDidMount(){
+//componentDidMount = triggered when component first renders onto page
+  //called AFTER render() 
+  this.handleAddTimer()
+}
 
 
 
