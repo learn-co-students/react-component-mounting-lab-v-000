@@ -32,6 +32,7 @@ class Timer extends Component {
 
   //clock functions
   clockTick = () => {
+    // console.log('Clock is ticking and setState will trigger a re-render')
     this.setState(prevState => ({
       time: prevState.time + 1
     }));
