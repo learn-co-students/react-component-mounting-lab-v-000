@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 
 import Timer from './Timer'
 
+
+
+
+
+
+
 class App extends Component {
 
   //no props being used here, so we can use the shorthand declaration of state
@@ -12,14 +18,9 @@ class App extends Component {
 
 
   //Your code here:
-
-
-
-
-
-
-
-
+componentDidMount() {
+  this.handleAddTimer()
+}
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
