@@ -11,9 +11,14 @@ class App extends Component {
 
 
   //Your code here:
+  componentDidMount() {
+    console.log("in componentDidMount")
+    this.handleAddTimer();
+  }
 
-
-
+  componentWillUnmount() {
+    this.removeTimer();
+  }
 
 
 
