@@ -12,7 +12,10 @@ class App extends Component {
 
   //Your code here:
 
-
+  componentDidMount() {
+    // setTimeout(this.handleAddTimer, 15000);
+      this.handleAddTimer(1)
+}
 
 
 
